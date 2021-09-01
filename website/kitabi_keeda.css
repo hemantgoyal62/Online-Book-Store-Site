@@ -1,0 +1,261 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'ubuntu',sans-serif;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.header{
+	height: auto;
+	width: 100%;
+	background-color: beige;
+	display: flex;
+}
+.header img
+{
+	height: 85px;
+	width: 100px;
+}
+.header p{
+	margin: 1.5em 3.5em;
+    font-size: 1.2em;
+    width: 25em;
+}
+.header #search{
+    height: 3.3em;
+    width: 2.7em;
+    margin-top: 1em;
+}
+.header #input
+{
+	height: 2em;
+    margin-top: 2em;
+    background-color: rgb(197,200,197);
+    color: black;
+    border-color: white;
+    border-width: 5px;
+    border-image: none;
+}
+.authenticate{
+	margin-left: 32%;
+    margin-top: 1.5em;
+}
+.authenticate button{
+	height: 2.5rem;
+    width: 7rem;
+    color: white;
+    background-color: cadetblue;
+    border-radius: 10px;
+    box-shadow: 4px 4px darkblue;
+}
+.menu a{
+	text-decoration: none;
+	color: black;
+	padding: 0px 5px;
+	font-size:2rem;
+}
+.menu a:hover{
+	font-size: 2.2rem;
+	color: palevioletred;
+	text-decoration: underline;
+}
+.menu{
+	background-color: white;
+}
+.container{
+	display: flex;
+	padding: 10px;
+	background-color:aliceblue;
+
+}
+.left-div{
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 0px 10px 10px 0px;
+	height: 30vh;
+}
+.ads{
+	height: 70vh;
+    width: 18%;
+    border: 1px solid black;
+    position: absolute;
+    left: 8px;
+    top: 60vh;
+}
+.hide{
+	/*overflow: hidden;*/
+	height: auto;
+	width: auto;
+}
+.imagegallery{
+
+}
+.right-div{
+	width: 80%;
+	padding: 10px;
+	margin-left: 10px;
+	height: fit-content;
+	position: relative;
+}
+#authenticate{
+    height: 75vh;
+    background-color: rgb(242, 245, 242);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 45rem;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    left: 4rem;
+    top: -4rem;
+    transform: ease-in;
+}
+#login, #signup{
+	padding: 20px;
+}
+#login #myform,#signup #my_form{
+	margin: 10px;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+#login #myform input,#signup #my_form input{
+	height: 6vh;
+    width: 15rem;
+    margin: 0.5rem;
+    padding-left: 11px;
+}
+.button2{
+	font-size: 1.5rem;
+}
+.seller
+{
+	height: 2vh;
+}
+#close{
+	height: 7.5vh;
+    position: absolute;
+    right: 15px;
+    width: 2rem;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px;
+    top: 12px
+}
+.items{
+	width: 100%;
+	border: 3px solid white;
+	height: fit-content;
+	margin-top: 15px;
+	padding: 5px;
+	overflow: hidden;
+}
+.button{
+	float: right;
+	margin-top: -25px;
+	width: 50px;
+}
+.button button{
+	border: 1px solid;
+	border-radius: 25px;
+	width: 19px;
+	background-color: red;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 16px;
+}
+.button button:hover{
+	color: white;
+	background-color: black;
+	width: 20px;
+	font-weight:normal ;
+	height: 20px;
+	font-size: 18px;
+}
+.books{
+	position: relative;
+	display: flex;
+}
+.inner-books{
+	padding: 10px;
+	border: 2px solid grey;
+	box-shadow: 2px 2px grey;
+	height: 50vh;
+	margin:5px 5px ;
+}
+.inner-books img{
+	height: 40vh;
+	width: 15rem;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 22%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col p,.footer-col address,.footer-col a{
+	color: #bbbbbb;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kitabi Keeda</title>
+	<link rel="stylesheet" type="text/css" href="kitabi_keeda.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style type="text/css">
+    .form input{
+           font-size: 26px;
+    margin: 11px;
+    width: 278px;
+    height: 23px;
+    padding: 4px;
+    border-radius: 9px;  
+    }
+    .form label{
+        font-size: 42px;
+    }
+    </style>
+	<script type="text/javascript">
+		function message(){
+			alert("This feature is not available on this site yet.");
+		}
+		function showsearch(){
+			var x=document.getElementById('input');
+			var val=document.getElementById("Signup");
+            if(x.style.display=="none")
+            {
+                x.style.display="block";
+                val.style.marginLeft=17.5+"%";
+            }
+            else
+            {
+                x.style.display="none";    
+                val.style.marginLeft=32+"%";          
+            }
+		}
+		function showdiv()
+        {
+            var x=document.getElementById('authenticate');
+            if(x.style.display=="none")
+            {
+                x.style.display="flex";
+            }
+            else
+            {
+                x.style.display="none";
+            }
+        }
+		function pass()
+        {
+            var text="";
+            var regx=/^([a-zA-Z0-9\.-]+)@([a-zA-z0-9]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+            if(document.getElementById('profile').value=="")
+            {
+                text="enter the profile name.\n"
+                document.getElementById('profile').style.border="3px solid red";
+            }
+            if(!regx.test(document.getElementById('email').value))
+            {
+                text+="invalid email id. \n"
+                document.getElementById('email').style.border="3px solid red";
+            }
+            if(document.getElementById('pass').value.trim().length>10)
+            {
+                text+="Too long password\n"
+                document.getElementById('pass').style.border="3px solid red";
+            }
+            if(document.getElementById('pass').value.trim().length<3)
+            {
+                text+="too short password. \n"
+                document.getElementById('pass').style.border="3px solid red";
+            }
+            if(text!="")
+            {
+                alert(text);
+                return false;
+            }
+            if(text=="")
+            {
+                text="you have successfully authenticated."
+                showdiv();
+                alert(text);
+                document.getElementById('profile').style.border="1px solid black";
+                document.getElementById('email').style.border="1px solid black";
+                document.getElementById('pass').style.border="1px solid black";
+                document.getElementById('myform').reset();
+                return true;
+            }
+        }
+        function pass1()
+        {
+            var text="";
+            var regx=/^([a-zA-Z0-9\.-]+)@([a-zA-z0-9]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+            if(document.getElementById('profile1').value=="")
+            {
+                text="enter the profile name.\n"
+                document.getElementById('profile1').style.border="3px solid red";
+            }
+            if(!regx.test(document.getElementById('email1').value))
+            {
+                text+="invalid email id. \n"
+                document.getElementById('email1').style.border="3px solid red";
+            }
+            if(document.getElementById('pass1').value.trim().length>10)
+            {
+                text+="Too long password\n"
+                document.getElementById('pass1').style.border="3px solid red";
+            }
+            if(document.getElementById('pass1').value.trim().length<3)
+            {
+                text+="too short password. \n"
+                document.getElementById('pass1').style.border="3px solid red";
+            }
+            if(text!="")
+            {
+                alert(text);
+                return false;
+            }
+            if(text=="")
+            {
+                text="you have successfully authenticated."
+                showdiv();
+                alert(text);
+                document.getElementById('profile1').style.border="1px solid black";
+                document.getElementById('email1').style.border="1px solid black";
+                document.getElementById('pass1').style.border="1px solid black";
+                document.getElementById('my_form').reset();
+                return true;
+            }
+        }
+    </script>
+</head>
+<body >
+    <div class="header">
+        <img src="titleimage.png" alt="title_image">
+        <p><a href="#contact">Contact Us</a>&nbsp&nbsp
+            <a href="#" onclick="message()">Wholesale</a>&nbsp&nbsp
+            <a href="selling.html">Sell Book</a>
+        </p>
+        <img src="searchicon.jpg" alt="search_icon" id="search" onclick="showsearch()">
+        <select type="text" name="search_query" placeholder="Enter your book name" id="input" style="display: none;">
+            <option value="none">--Select One--</option>
+            <optgroup label="Book Sets"></optgroup>
+            <option value="comp dan"><a href="#">Dan Brown</a></option>
+            <option value="lolita">Lolita, Mein Kampf, Anne Frank</option>
+            <option value="george orwell">George Orwell</option>
+            <option value="millenium">Millenium Series</option>
+            <option value="Agastha">Agastha Christie</option>
+            <option value="selection">The Selection Series</option>
+            <optgroup label="Young Adult"></optgroup>
+            <option value="mightier">Mightier Than the sword</option>
+            <option value="postscript">PostScript</option>
+            <option value="gonegirl">Gone Girl</option>
+            <option value="ambulance">An Ambulance of Katherines</option>
+            <option value="shadow">Shadow and Bone</option>
+            <option value="faith">Have A Little Faith</option>
+            <optgroup label="Recently Purchased"></optgroup>
+            <option value="kite">The Kite Runner</option>
+            <option value="suns">A Thousand Splendid Suns</option>
+            <option value="smoke">Like Smoke</option>
+            <option value="billions">Target 3 Billions</option>
+            <option value="ahimsa">Ahimsa</option>
+            <option value="rumi">The Essential Rumi</option>
+            <optgroup label="What's Trending"></optgroup>
+            <option value="comeup">On the Come Up</option>
+            <option value="Wasted">The Wasted Vigil</option>
+            <option value="hunger">The Hunger Games</option>
+            <option value="girl on train">The Girl on the Train</option>
+            <option value="bright">All the Bright Places</option>
+            <option value="vanara">Vanara</option>
+            <optgroup label="Reader's Choice"></optgroup>
+            <option value="help">The help</option>
+            <option value="tolstoy">Leo Tolstoy</option>
+            <option value="reluctant">Reluctant Fundamentalist</option>
+            <option value="secret">Best Kept Secret</option>
+            <option value="time">Only Time Will Tell</option>
+            <option value="suns">A Thousand Splendid Suns</option>
+        </select>
+        <div class="authenticate" id="Signup">
+            <button onclick="showdiv()">Login/Signup</button>
+        </div>
+    </div>
+    <hr color="white">
+    <div class="menu">
+        <p>&nbsp&nbsp&nbsp <a href="#">Home</a>&nbsp&nbsp <a href="#categories"> Categories </a> &nbsp&nbsp <a href="#recen_purch"> Newly purchased </a> &nbsp&nbsp <a href="#"> Popular </a>&nbsp&nbsp <a href="#"> Comics </a></p>
+    </div>
+    <hr color="white">
+    <div class="container">
+        <div class="left-div" id="categories">
+            <h2><a href="#book_set">Book sets</a></h2>
+            <hr >
+            <h2><a href="#Young_adult">Young adult</a></h2>
+            <hr >
+            <h2><a href="#recen_purch">Recently Purchased</a></h2>
+            <hr >
+            <h2><a href="#trending">Trending</a></h2>
+            <hr >
+            <h2><a href="#reader">Reader's choice</a></h2>
+            <hr >
+            <h2><a href="#">Your cart</a></h2>
+        </div>
+        <!-- if ads div is required, it is in whatsapp -->
+        <div class="right-div">
+            <center>
+                <div id="authenticate" style="display:none;" >
+                    <div id="login">
+                        <h2> LOG-IN </h2>
+                        <form id="myform">
+                            <p>Profile:<input type="text" id="profile" placeholder="Your profile name" name="text"></p>
+                            <p>Email ID:<input type="email" id="email" placeholder="Your Email ID" name="email"></p>
+                            <p>Password:<input type="password" id="pass" placeholder="Password" name="password"></p>
+                            <p><input type="submit" class="button2" value="Submit" onclick="return pass()"></p>
+                        </form>
+                    </div>
+                    <div id="signup">
+                        <h2> SIGN-UP </h2>
+                        <form id="my_form">
+                            <p>Profile:<input type="text" id="profile1" placeholder="Your profile name"name="text"></p>
+                            <p>Email ID:<input type="email" id="email1" placeholder="Your Email ID"name="email"></p>
+                            <p>Password:<input type="password" id="pass1" placeholder="Password"name="password"></p>
+                            <p><input type="submit" class="button2" onclick="return pass1()"></p>
+                        </form>
+                    </div>
+                    <button onclick="showdiv()" id="close"> X </button>
+                </div> 
+            </center>
+            <div class="right-div">
+                <div class=" items" >
+                    <h2 style="font-size: 2.5rem;">Insert all the required data in the form</h2>
+                    <hr>
+                </div>
+                <form action="insert.php" method="post" class="form">
+                    <label for="user_id">Customer-id</label>
+                    <input type="text" name="user_id" placeholder="Your customer_id here" style="margin-left: 52px;"><br>
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" placeholder="Your password here" style="margin-left: 94px"><br>
+                    <label for="book_name">Book name</label>
+                    <input type="text" name="bookname" placeholder="The Book name" style="margin-left: 64px"><br>
+                    <label for="author">Author</label>
+                    <input type="text" name="author" placeholder="The author name" style="margin-left: 134px"><br>
+                    <label for="price">Price</label>
+                    <input type="text" name="price" placeholder="The price of this book" style="margin-left: 162px">
+                    <center><input type="submit" value="SUBMIT" name="SUBMIT" style="WIDTH: 110px;height: 56px;background-color: slateblue;"></center>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div >
+            <div class="row">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>
+                        Ever wanted to buy a book but could not because it was too expensive? worry not! because Kitabi Keeda is here! Kitabi Keeda, these days in news,is being called as the Robinhood of the world of books. Kitabi Keeda team is committed to bring to you all kinds of best books at the minimal prices ever seen anywhere. Yes, we are literally giving you away a steal.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Sell Book</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="contact">
+                    <h4>Our Contact</h4>
+                    <address>
+                        KITABIKEEDA.COM<br>
+                        #5,Ambedkar Nagar<br>
+                        Ferozpur Road,Ludhiana<br>
+                        Punjab,148000<br>
+                        Ph-00000 11111<br>
+                        Email- <a href='#'>admin@kitabikeeda.com</a>
+                    </address>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

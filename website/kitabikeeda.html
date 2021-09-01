@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kitabi Keeda</title>
+	<link rel="stylesheet" type="text/css" href="kitabi_keeda.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+	<script type="text/javascript">
+		function message(){
+			alert("This feature is not available yet.");
+		}
+		function showsearch(){
+			var x=document.getElementById('input');
+			var val=document.getElementById("Signup");
+            if(x.style.display=="none")
+            {
+                x.style.display="block";
+                val.style.marginLeft=17.5+"%";
+            }
+            else
+            {
+                x.style.display="none";    
+                val.style.marginLeft=32+"%";          
+            }
+		}
+		function showdiv()
+        {
+            var x=document.getElementById('authenticate');
+            if(x.style.display=="none")
+            {
+                x.style.display="flex";
+            }
+            else
+            {
+                x.style.display="none";
+            }
+        }
+		function pass()
+        {
+            var text="";
+            var regx=/^([a-zA-Z0-9\.-]+)@([a-zA-z0-9]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+            if(document.getElementById('profile').value=="")
+            {
+                text="enter the profile name.\n"
+                document.getElementById('profile').style.border="3px solid red";
+            }
+            if(!regx.test(document.getElementById('email').value))
+            {
+                text+="invalid email id. \n"
+                document.getElementById('email').style.border="3px solid red";
+            }
+            if(document.getElementById('pass').value.trim().length>10)
+            {
+                text+="Too long password\n"
+                document.getElementById('pass').style.border="3px solid red";
+            }
+            if(document.getElementById('pass').value.trim().length<3)
+            {
+                text+="too short password. \n"
+                document.getElementById('pass').style.border="3px solid red";
+            }
+            if(text!="")
+            {
+                alert(text);
+                return false;
+            }
+            if(text=="")
+            {
+                text="you have successfully authenticated."
+                showdiv();
+                alert(text);
+                document.getElementById('profile').style.border="1px solid black";
+                document.getElementById('email').style.border="1px solid black";
+                document.getElementById('pass').style.border="1px solid black";
+                document.getElementById('myform').reset();
+                return true;
+            }
+        }
+        function pass1()
+        {
+            var text="";
+            var regx=/^([a-zA-Z0-9\.-]+)@([a-zA-z0-9]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+            if(document.getElementById('profile1').value=="")
+            {
+                text="enter the profile name.\n"
+                document.getElementById('profile1').style.border="3px solid red";
+            }
+            if(!regx.test(document.getElementById('email1').value))
+            {
+                text+="invalid email id. \n"
+                document.getElementById('email1').style.border="3px solid red";
+            }
+            if(document.getElementById('pass1').value.trim().length>10)
+            {
+                text+="Too long password\n"
+                document.getElementById('pass1').style.border="3px solid red";
+            }
+            if(document.getElementById('pass1').value.trim().length<3)
+            {
+                text+="too short password. \n"
+                document.getElementById('pass1').style.border="3px solid red";
+            }
+            if(text!="")
+            {
+                alert(text);
+                return false;
+            }
+            if(text=="")
+            {
+                text="you have successfully authenticated."
+                showdiv();
+                alert(text);
+                document.getElementById('profile1').style.border="1px solid black";
+                document.getElementById('email1').style.border="1px solid black";
+                document.getElementById('pass1').style.border="1px solid black";
+                document.getElementById('my_form').reset();
+                return true;
+            }
+        }
+		function prev()
+		{
+			if(parseInt(document.getElementById("book_set").style.left,10)==0){
+				document.getElementById("book_set").style.left=-550;
+				return;
+			}
+			var val=(parseInt(document.getElementById("book_set").style.left,10)||0) +275;
+			document.getElementById("book_set").style.left=val+'px';
+		}
+		function next()
+		{
+			if(parseInt(document.getElementById('book_set').style.left,10)==-550){
+				document.getElementById('book_set').style.left=0;
+				return;
+			}
+			var val=(parseInt(document.getElementById('book_set').style.left,10)||0) -275;
+			document.getElementById("book_set").style.left=val+'px';
+		}
+		function prev1()
+		{
+			if(parseInt(document.getElementById("Young_adult").style.left,10)==0){
+				document.getElementById("Young_adult").style.left=-550;
+				return;
+			}
+			var val=(parseInt(document.getElementById("Young_adult").style.left,10)||0) +275;
+			document.getElementById("Young_adult").style.left=val+'px';
+		}
+		function next1()
+		{
+			if(parseInt(document.getElementById('Young_adult').style.left,10)==-550){
+				document.getElementById('Young_adult').style.left=0;
+				return;
+			}
+			var val=(parseInt(document.getElementById('Young_adult').style.left,10)||0) -275;
+			document.getElementById("Young_adult").style.left=val+'px';
+		}
+		function prev2()
+		{
+			if(parseInt(document.getElementById("recen_purch").style.left,10)==0){
+				document.getElementById("recen_purch").style.left=-550;
+				return;
+			}
+			var val=(parseInt(document.getElementById("recen_purch").style.left,10)||0) +275;
+			document.getElementById("recen_purch").style.left=val+'px';
+		}
+		function next2()
+		{
+			if(parseInt(document.getElementById('recen_purch').style.left,10)==-550){
+				document.getElementById('recen_purch').style.left=0;
+				return;
+			}
+			var val=(parseInt(document.getElementById('recen_purch').style.left,10)||0) -275;
+			document.getElementById("recen_purch").style.left=val+'px';
+		}
+		function prev3()
+		{
+			if(parseInt(document.getElementById("trending").style.left,10)==0){
+				document.getElementById("trending").style.left=-550;
+				return;
+			}
+			var val=(parseInt(document.getElementById("trending").style.left,10)||0) +275;
+			document.getElementById("trending").style.left=val+'px';
+		}
+		function next3()
+		{
+			if(parseInt(document.getElementById('trending').style.left,10)==-550){
+				document.getElementById('trending').style.left=0;
+				return;
+			}
+			var val=(parseInt(document.getElementById('trending').style.left,10)||0) -275;
+			document.getElementById("trending").style.left=val+'px';
+		}
+		function prev4()
+		{
+			if(parseInt(document.getElementById("reader").style.left,10)==0){
+				document.getElementById("reader").style.left=-550;
+				return;
+			}
+			var val=(parseInt(document.getElementById("reader").style.left,10)||0) +275;
+			document.getElementById("reader").style.left=val+'px';
+		}
+		function next4()
+		{
+			if(parseInt(document.getElementById('reader').style.left,10)==-550){
+				document.getElementById('reader').style.left=0;
+				return;
+			}
+			var val=(parseInt(document.getElementById('reader').style.left,10)||0) -275;
+			document.getElementById("reader").style.left=val+'px';
+		}
+	</script>
+</head>
+<body >
+	<div class="header">
+		<img src="titleimage.png" alt="title_image">
+		<p><a href="#contact">Contact Us</a>&nbsp&nbsp
+			<a href="#" onclick="message()">Wholesale</a>&nbsp&nbsp
+			<a href="selling.html">Sell Book</a>
+		</p>
+		<img src="searchicon.jpg" alt="search_icon" id="search" onclick="showsearch()">
+		<select type="text" name="search_query" placeholder="Enter your book name" id="input" style="display: none;" onchange="window.location.href=this.value">
+			<option value="none" disabled selected>--Select One--</option>
+			<optgroup label="Book Sets"></optgroup>
+			<option value="Book_set/Book_set1.html"><a href="Book_set1.html">Dan Brown</a></option>
+			<option value="Book_set/Book_set2.html">Lolita, Mein Kampf, Anne Frank</option>
+			<option value="Book_set/Book_set3.html">George Orwell</option>
+			<option value="Book_set/Book_set4.html">Millenium Series</option>
+			<option value="Book_set/Book_set5.html">Agastha Christie</option>
+			<option value="Book_set/Book_set6.html">The Selection Series</option>
+			<optgroup label="Young Adult"></optgroup>
+			<option value="Young adult/Young adult1.html">Mightier Than the sword</option>
+			<option value="Young adult/Young adult2.html">PostScript</option>
+			<option value="Young adult/Young adult3.html">Gone Girl</option>
+			<option value="Young adult/Young adult4.html">An Ambulance of Katherines</option>
+			<option value="Young adult/Young adult5.html">Shadow and Bone</option>
+			<option value="Young adult/Young adult6.html">Have A Little Faith</option>
+			<optgroup label="Recently Purchased"></optgroup>
+			<option value="Recently Purchased/recent1.html">The Kite Runner</option>
+			<option value="Recently Purchased/recent2.html">A Thousand Splendid Suns</option>
+			<option value="Recently Purchased/recent3.html">Like Smoke</option>
+			<option value="Recently Purchased/recent4.html">Target 3 Billions</option>
+			<option value="Recently Purchased/recent5.html">Ahimsa</option>
+			<option value="Recently Purchased/recent6.html">The Essential Rumi</option>
+			<optgroup label="What's Trending"></optgroup>
+			<option value="trending/trending1.html">On the Come Up</option>
+			<option value="trending/trending2.html">The Wasted Vigil</option>
+			<option value="trending/trending3.html">The Hunger Games</option>
+			<option value="trending/trending4.html">The Girl on the Train</option>
+			<option value="trending/trending5.html">All the Bright Places</option>
+			<option value="trending/trending6.html">Vanara</option>
+			<optgroup label="Reader's Choice"></optgroup>
+			<option value="Reader/reader1.html">The help</option>
+			<option value="Reader/reader2.html">Leo Tolstoy</option>
+			<option value="Reader/reader3.html">Reluctant Fundamentalist</option>
+			<option value="Reader/reader4.html">Best Kept Secret</option>
+			<option value="Reader/reader5.html">Only Time Will Tell</option>
+			<option value="Recently Purchased/recent2.html">A Thousand Splendid Suns</option>
+		</select>
+		<div class="authenticate" id="Signup">
+			<button onclick="showdiv()">Login/Signup</button>
+		</div>
+	</div>
+	<hr color="white">
+	<div class="menu">
+		<p>&nbsp&nbsp&nbsp <a href="#">Home</a>&nbsp&nbsp <a href="#categories"> Categories </a> &nbsp&nbsp <a href="#recen_purch"> Newly purchased </a> &nbsp&nbsp <a href="#trending"> Popular </a>&nbsp&nbsp <a href="#" onclick="message()"> Comics </a></p>
+	</div>
+	<hr color="white">
+	<div class="container">
+		<div class="left-div" id="categories">
+			<h2><a href="#book_set">Book sets</a></h2>
+			<hr >
+			<h2><a href="#Young_adult">Young adult</a></h2>
+			<hr >
+			<h2><a href="#recen_purch">Recently Purchased</a></h2>
+			<hr >
+			<h2><a href="#trending">Trending</a></h2>
+			<hr >
+			<h2><a href="#reader">Reader's choice</a></h2>
+			<hr >
+			<h2><a href="cart.php">Your cart</a></h2>
+		</div>
+		<!-- if ads div is required, it is in whatsapp -->
+		<div class="right-div">
+			<center>
+	            <div id="authenticate" style="display:none;" >
+	                <div id="login">
+	                    <h2> LOG-IN </h2>
+	                    <form id="myform" action="check.php" method="post">
+		                    <p>Profile:<input type="text" id="profile" placeholder="Your customer_id" name="cid"></p>
+		                    <p>Email ID:<input type="email" id="email" placeholder="Your Email ID" name="email"></p>
+		                    <p>Password:<input type="password" id="pass" placeholder="Password" name="passw"></p>
+		                    <p><input type="submit" class="button2" value="Submit" name="SUBMIT" onclick="return pass()"></p>
+	                	</form>
+	                </div>
+	                <div id="signup" >
+	                    <h2> SIGN-UP </h2>
+	                    <form id="my_form" action="user_add.php" method="post">
+		                    <p>Profile:<input type="text" id="profile1" placeholder="Your profile name" name="cid"></p>
+		                    <p>Email ID:<input type="email" id="email1" placeholder="Your Email ID" name="email"></p>
+		                    <p>Password:<input type="password" id="pass1" placeholder="Password" name="pass"></p>
+		                    <p><input type="submit" class="button2" onclick="return pass1()" name="SUBMIT"></p>
+	                	</form>
+	                </div>
+	                <button onclick="showdiv()" id="close"> X </button>
+	            </div> 
+	        </center>
+			<div class="items">
+				<div class="inner-heading">
+					<h2 >Book Sets</h2>
+					<div class="button">
+						<button onclick="prev()"><</button>
+						<button onclick="next()">></button>
+					</div>
+					<hr>
+				</div>
+				<div class="books bookset" id="book_set" style="left:0px;">
+					<div class="inner-books">
+						<img src="Book_set/book_set1.jpg" alt="book1">
+						<center><a href="Book_set/Book_set1.html"><figcaption>Complete Dan...</figcaption></a></center>
+						<p>Rs. 550&nbsp<font color="red" ><strike>Rs. 690</strike></font></p>
+
+					</div>
+					<div class="inner-books">
+						<img src="Book_set/book_set2.jpg" alt="book1">
+						<center><a href="Book_set/Book_set2.html"><figcaption>Lolita, MEIN-...</figcaption></a></center>
+						<p>Rs. 550&nbsp<font color="red" ><strike>Rs. 690</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Book_set/book_set3.jpg" alt="book1">
+						<center><a href="Book_set/Book_set3.html"><figcaption>Georgee Orwell...</figcaption></a></center>
+						<p>Rs.1020&nbsp<font color="red"><strike>Rs.1500</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Book_set/book_set4.jpg" alt="book1">
+						<center><a href="Book_set/Book_set4.html"><figcaption>Millenium Series Trilogy</figcaption></a></center>
+						<p>Rs. 6000 &nbsp</p>
+					</div>
+					<div class="inner-books">
+						<img src="Book_set/book_set5.jpg" alt="book1">
+						<center><a href="Book_set/Book_set5.html"><figcaption>Agastha Christie pack-of-3</figcaption></a></center>
+						<p>Rs. 400 &nbsp<font color="red" ><strike>Rs. 750</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Book_set/book_set6.jpg" alt="book1">
+						<center><a href="Book_set/Book_set6.html"><figcaption>The Selection Series #1-5</figcaption></a></center>
+						<p>Rs. 1000&nbsp<font color="red" ><strike>Rs. 1350</strike></font></p>
+					</div>	
+				</div>
+			</div> 
+			<div class="items">
+				<div class="inner-heading">
+					<h2>Young Adults</h2>
+					<div class="button">
+						<button onclick="prev1()"><</button>
+						<button onclick="next1()">></button>
+					</div>
+					<hr>
+				</div>
+				<div class="books youngadult" id="Young_adult" style="left:0px;">
+					<div class="inner-books">
+						<img src="Young adult/Young_adult1.jpg" alt="book1">
+						<center><a href="Young adult/Young adult1.html"><figcaption>Mightier than...</figcaption></a></center>
+						<p>Rs. 500&nbsp</p>
+					</div>
+					<div class="inner-books">
+						<img src="Young adult/Young_adult2.jpg" alt="book1">
+						<center><a href="Young adult/Young adult2.html"><figcaption>PostScript Cecelia...</figcaption></a></center>
+						<p>Rs. 120&nbsp<font color="red" ><strike>Rs. 340</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Young adult/Young_adult3.jpg" alt="book1">
+						<center><a href="Young adult/Young adult3.html"><figcaption>Gone Girl</figcaption></a></center>
+						<p>Rs. 150&nbsp</p>
+					</div>
+					<div class="inner-books">
+						<img src="Young adult/Young_adult4.jpg" alt="book1">
+						<center><a href="Young adult/Young adult4.html"><figcaption>An Ambudance of...</figcaption></a></center>
+						<p>Rs. 200&nbsp<font color="red" ><strike>Rs. 410</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Young adult/Young_adult5.jpg" alt="book1">
+						<center><a href="Young adult/Young adult5.html"><figcaption>Shadow and...</figcaption></a></center><p>Rs. 400&nbsp<font color="red"><strike>Rs.500</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Young adult/Young_adult6.jpg" alt="book1">
+						<center><a href="Young adult/Young adult6.html"><figcaption>Have a litt..</figcaption></a></center><p>Rs. 500</p>
+					</div>	
+				</div>
+			</div> 
+			<div class="items">
+				<div class="inner-heading">
+					<h2 >Recently Purchased</h2>
+					<div class="button">
+						<button onclick="prev2()"><</button>
+						<button onclick="next2()">></button>
+					</div>
+					<hr>
+				</div>
+				<div class="books" id="recen_purch" style="left:0px">
+					<div class="inner-books" >
+						<img src="Recently purchased/recen_purch1.jpg" alt="book1">
+						<center><a href="Recently purchased/recent1.html"><figcaption>The kite runn...</figcaption></a></center><p>Rs. 300&nbsp<font color="red"><strike>Rs. 350</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Recently purchased/recen_purch2.jpg" alt="book1">
+						<center><a href="Recently purchased/recent2.html"><figcaption>A thousand ...</figcaption></a></center>
+						<p>Rs. 250&nbsp<font color="red"><strike>Rs 350</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Recently purchased/recen_purch3.jpg" alt="book1">
+						<center><a href="Recently purchased/recent3.html"><figcaption>Like Smoke</figcaption></a></center><p>Rs. 325&nbsp<font color="red"><strike>Rs. 350</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Recently purchased/recen_purch4.jpg" alt="book1">
+						<center><a href="Recently purchased/recent4.html"><figcaption>Target 3 bil...</figcaption></a></center><p>Rs.175&nbsp<font color="red"><strike>Rs.350</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Recently purchased/recen_purch5.jpg" alt="book1">
+						<center><a href="Recently purchased/recent5.html"><figcaption>Ahimsa</figcaption></a></center><p>Rs.200</p>
+					</div>
+					<div class="inner-books">
+						<img src="Recently purchased/recen_purch6.jpg" alt="book1">
+						<center><a href="Recently purchased/recent6.html"><figcaption>The Essential Rumi</figcaption></a></center><p>Rs. 400&nbsp<font color="red"><strike>Rs.550</strike></font></p>
+					</div>	
+				</div>
+			</div>
+			<div class="items">
+				<div class="inner-heading">
+					<h2 >What's Trending?</h2>
+					<div class="button">
+						<button onclick="prev3()"><</button>
+						<button onclick="next3()">></button>
+					</div>
+					<hr>
+				</div>
+				<div class="books trending" id="trending" style="left:0px;">
+					<div class="inner-books" >
+						<img src="trending/trending1.jpg" alt="book1">
+						<center><a href="trending/trending1.html"><figcaption>On the com...</figcaption></a></center><p>Rs. 2100&nbsp<font color="red"><strike>Rs. 2800</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="trending/trending2.jpg" alt="book1">
+						<center><a href="trending/trending2.html"><figcaption>The Waste...</figcaption></a></center><p>Rs. 210&nbsp<font color="red"><strike>Rs. 300</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="trending/trending3.jpg" alt="book1">
+						<center><a href="#/inner-books"><figcaption>The hunger Gam</figcaption></a></center><p>Rs. 300&nbsp<font color="red"><strike>Rs. 500</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="trending/trending4.jpg" alt="book1">
+						<center><a href="#/inner-books"><figcaption>The Girl on th...</figcaption></a></center><p>Rs. 150&nbsp<font color="red"><strike>Rs. 300</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="trending/trending5.jpg" alt="book1">
+						<center><a href="trending/trending5.html"><figcaption>All the brig..</figcaption></a></center><p>Rs. 210&nbsp<font color="red"><strike>Rs. 500</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="trending/trending6.jpg" alt="book1">
+						<center><a href="trending/trending6.html"><figcaption>Vanara- the ...</figcaption></a></center><p>Rs. 200&nbsp<font color="red"><strike>Rs. 400</strike></font></p>
+					</div>	
+				</div>
+			</div>
+			<div class="items">
+				<div class="inner-heading">
+					<h2>Reader's choice</h2>
+					<div class="button">
+						<button onclick="prev4()"><</button>
+						<button onclick="next4()">></button>
+					</div>
+					<hr>
+				</div>
+				<div class="books" id="reader" style="left:0px;">
+					<div class="inner-books">
+						<img src="Reader/reader1.jpg" alt="book1">
+						<center><a href="Reader/reader1.html"><figcaption>The help</figcaption></a></center><p>Rs. 150&nbsp<font color="red"><strike>Rs. 400</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Reader/reader2.jpg" alt="book1">
+						<center><a href="Reader/reader2.html"><figcaption>The greatest story...</figcaption></a></center><p>Rs. 200&nbsp<font color="red"><strike>Rs. 500</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Reader/reader3.jpg" alt="book1">
+						<center><a href="Reader/reader3.html"><figcaption>The reluctant ...</figcaption></a></center><p>Rs. 300&nbsp<font color="red"><strike>Rs. 700</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Reader/reader4.jpg" alt="book1">
+						<center><a href="Reader/reader4.html"><figcaption>Best kept secret</figcaption></a></center><p>Rs. 400&nbsp<font color="red"><strike>Rs. 700</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Reader/reader5.jpg" alt="book1">
+						<center><a href="Reader/reader5.html"><figcaption>Only time will ...</figcaption></a></center><p>Rs. 170&nbsp<font color="red"><strike>Rs. 300</strike></font></p>
+					</div>
+					<div class="inner-books">
+						<img src="Reader/reader6.jpg" alt="book1">
+						<center><a href="Recently purchased/recent2.html"><figcaption>A thousand Splen...</figcaption></a></center><p>Rs. 250&nbsp<font color="red"><strike>Rs. 350</strike></font></p>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div >
+			<div class="row">
+				<div class="footer-col">
+					<h4>About Us</h4>
+					<p>
+						Ever wanted to buy a book but could not because it was too expensive? worry not! because Kitabi Keeda is here! Kitabi Keeda, these days in news,is being called as the Robinhood of the world of books. Kitabi Keeda team is committed to bring to you all kinds of best books at the minimal prices ever seen anywhere. Yes, we are literally giving you away a steal.
+					</p>
+				</div>
+				<div class="footer-col">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Sell Book</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">FAQs</a></li>
+					</ul>
+				</div>
+				<div class="footer-col" id="contact">
+					<h4>Our Contact</h4>
+					<address>
+						KITABIKEEDA.COM<br>
+						#5,Ambedkar Nagar<br>
+						Ferozpur Road,Ludhiana<br>
+						Punjab,148000<br>
+						Ph-00000 11111<br>
+						Email- <a href='#'>admin@kitabikeeda.com</a>
+					</address>
+				</div>
+				<div class="footer-col">
+					<h4>follow us</h4>
+					<div class="social-links">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
